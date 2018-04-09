@@ -13,7 +13,7 @@ public class KwicFac2 extends AbstractKwicFac {
     private static KwicFac2 instance = null;
     private KwicFac2(){};
 
-    public KwicFac2 getInstance(){
+    public static KwicFac2 getInstance(){
         if(instance == null){
             instance = new KwicFac2();
         }
@@ -21,7 +21,7 @@ public class KwicFac2 extends AbstractKwicFac {
     }
     @Override
     public EntryListConsumer createConsumer() {
-        return new ConsoleOutput();
+        return ConsoleOutput.getInstance();
     }
 
     @Override
@@ -37,7 +37,7 @@ public class KwicFac2 extends AbstractKwicFac {
     @Override
     public List<EntryListFilter> createFilter() {
         List<EntryListFilter> filters = new LinkedList<>();
-        filters.add(new Sorter());
+        filters.add(Sorter.getInstance());
         filters.add(new Filter());
         return filters;
     }

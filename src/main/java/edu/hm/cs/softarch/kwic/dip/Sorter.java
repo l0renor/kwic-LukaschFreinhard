@@ -13,9 +13,9 @@ import java.util.List;
 public class Sorter implements EntryListFilter {
 
 	private static Sorter instance = null;
-	public Sorter(){};
+	private Sorter(){};
 
-	public Sorter getInstance() {
+	public static Sorter getInstance() {
 		if (instance == null) {
 			instance = new Sorter();
 		}

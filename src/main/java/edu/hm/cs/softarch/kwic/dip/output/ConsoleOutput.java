@@ -12,9 +12,9 @@ import edu.hm.cs.softarch.kwic.dip.Sorter;
  */
 public class ConsoleOutput implements EntryListConsumer {
 	private static ConsoleOutput instance = null;
-	public ConsoleOutput(){};
+	private ConsoleOutput(){};
 
-	public ConsoleOutput getInstance() {
+	public static ConsoleOutput getInstance() {
 		if (instance == null) {
 			instance = new ConsoleOutput();
 		}

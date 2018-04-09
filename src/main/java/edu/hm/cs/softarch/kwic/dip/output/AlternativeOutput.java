@@ -16,7 +16,7 @@ public class AlternativeOutput implements EntryListConsumer {
 	private static AlternativeOutput instance = null;
 	public AlternativeOutput(){};
 
-	public AlternativeOutput getInstance() {
+	public static AlternativeOutput getInstance() {
 		if (instance == null) {
 			instance = new AlternativeOutput();
 		}

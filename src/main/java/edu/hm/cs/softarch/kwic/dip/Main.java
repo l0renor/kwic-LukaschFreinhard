@@ -9,6 +9,6 @@ package edu.hm.cs.softarch.kwic.dip;
 public class Main {
 
 	public static void main(String[] args) {
-		new Kwic("input.txt", new KwicFac2()).print();
+		new Kwic("input.txt", KwicFac2.getInstance()).print();
 	}
 }

@@ -12,6 +12,16 @@ import java.util.List;
  */
 public class Filter implements EntryListFilter {
 
+	private static Filter instance = null;
+	private Filter(){};
+
+	public static Filter getInstance(){
+		if(instance == null){
+			instance = new Filter();
+		}
+		return instance;
+	}
+
 	private List<KwicEntry> entries = new ArrayList<>();
 
 	@Override

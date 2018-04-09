@@ -38,7 +38,7 @@ public class KwicFac2 extends AbstractKwicFac {
     public List<EntryListFilter> createFilter() {
         List<EntryListFilter> filters = new LinkedList<>();
         filters.add(Sorter.getInstance());
-        filters.add(new Filter());
+        filters.add(Filter.getInstance());
         return filters;
     }
 

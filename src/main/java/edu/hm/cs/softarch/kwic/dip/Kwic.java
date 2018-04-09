@@ -16,7 +16,7 @@ import edu.hm.cs.softarch.kwic.dip.output.AlternativeOutput;
 public class Kwic {
 
 	private Input input;
-	private IndexingEntryCreator creator;
+	private EntryCreator creator;
 	private List<EntryListFilter> filters = new ArrayList<>();
 	private EntryListConsumer consumer;
 
@@ -26,12 +26,11 @@ public class Kwic {
 	 * @param phraseFileName
 	 *            Dateiname mit Phrasen oder Titeln (zeilenweise).
 	 */
-	public Kwic(String phraseFileName) {
-		input = new SimpleFileInput(phraseFileName);		
-		creator = new IndexingEntryCreator();
-		filters.add(new Sorter());
-		filters.add(new Filter());
-		consumer = new AlternativeOutput();
+	public Kwic(String phraseFileName, AbstractKwicFac kwicFac) {
+		input = kwicFac.createInput(phraseFileName);
+		creator = kwicFac.createCreatort();
+		filters = kwicFac.createFilter();
+		consumer = kwicFac.createConsumer();
 	}
 
 	/**

@@ -3,6 +3,7 @@ package edu.hm.cs.softarch.kwic.dip.output;
 import edu.hm.cs.softarch.kwic.dip.EntryListConsumer;
 import edu.hm.cs.softarch.kwic.dip.EntryListProvider;
 import edu.hm.cs.softarch.kwic.dip.KwicEntry;
+import edu.hm.cs.softarch.kwic.dip.Sorter;
 
 /**
  * Klasse zur Ausgabe eines Wortes mit seinem Kontext.
@@ -10,11 +11,20 @@ import edu.hm.cs.softarch.kwic.dip.KwicEntry;
  * @author katz.bastian
  */
 public class ConsoleOutput implements EntryListConsumer {
+	private static ConsoleOutput instance = null;
+	private ConsoleOutput(){};
+
+	public ConsoleOutput getInstance() {
+		if (instance == null) {
+			instance = new ConsoleOutput();
+		}
+		return instance;
+	}
 
 	/**
 	 * Gibt ein Wort mit umgebendem Kontext aus.
 	 * 
-	 * @param entryProvider
+	 * @param provider
 	 *            Klasse, die sortierte Liste von Wörtern bereitstellt.
 	 */
 	@Override

@@ -18,6 +18,8 @@ import edu.hm.cs.softarch.kwic.dip.creator.IndexingEntryCreator;
  * 
  * @author katz.bastian
  */
+
+//Ergibt keinen Sinn hat potentiell verschiedene Filenames.
 public class SimpleFileInput implements Input {
 	private static Logger LOG = LoggerFactory.getLogger(SimpleFileInput.class);
 

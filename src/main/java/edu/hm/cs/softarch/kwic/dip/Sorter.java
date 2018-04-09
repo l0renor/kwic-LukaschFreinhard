@@ -12,6 +12,16 @@ import java.util.List;
  */
 public class Sorter implements EntryListFilter {
 
+	private static Sorter instance = null;
+	private Sorter(){};
+
+	public Sorter getInstance() {
+		if (instance == null) {
+			instance = new Sorter();
+		}
+		return instance;
+	}
+
 	private List<KwicEntry> entries = new ArrayList<>();
 
 	@Override

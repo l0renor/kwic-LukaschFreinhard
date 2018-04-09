@@ -13,7 +13,7 @@ import java.util.List;
 public class Sorter implements EntryListFilter {
 
 	private static Sorter instance = null;
-	private Sorter(){};
+	public Sorter(){};
 
 	public Sorter getInstance() {
 		if (instance == null) {

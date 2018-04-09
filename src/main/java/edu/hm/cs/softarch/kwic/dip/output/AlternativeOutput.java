@@ -14,7 +14,7 @@ import edu.hm.cs.softarch.kwic.dip.KwicEntry;
  */
 public class AlternativeOutput implements EntryListConsumer {
 	private static AlternativeOutput instance = null;
-	private AlternativeOutput(){};
+	public AlternativeOutput(){};
 
 	public AlternativeOutput getInstance() {
 		if (instance == null) {
